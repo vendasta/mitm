@@ -269,14 +269,14 @@ var (
 )
 
 func getCert(ca *tls.Certificate, host string) (*tls.Certificate, error) {
-	if c := getCachedCert(ca, host); c != nil {
-		return c, nil
-	}
+	//if c := getCachedCert(ca, host); c != nil {
+	//	return c, nil
+	//}
 	cert, err := GenerateCert(ca, host)
 	if err != nil {
 		return nil, err
 	}
-	cacheCert(ca, host, cert)
+	//cacheCert(ca, host, cert)
 	return cert, nil
 }
 
